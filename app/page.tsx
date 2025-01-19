@@ -13,13 +13,13 @@ export default function Home() {
       <div className="mx-auto max-w-7xl space-y-8">
         <WalletHeader />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
           <AccountsOverview />
           <BudgetProgress />
-          <Card className="p-6">
+          {/* <Card className="p-6">
             <h3 className="font-semibold text-lg mb-4">Quick Actions</h3>
             {/* Quick actions content */}
-          </Card>
+          {/* </Card> */} 
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
