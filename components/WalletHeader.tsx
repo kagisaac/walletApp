@@ -29,10 +29,10 @@ export function WalletHeader() {
           <PlusCircle className="h-4 w-4" />
           Add Transaction
         </Button>
-        <Button 
+        <Button
           onClick={() => setIsReportDialogOpen(true)}
-          variant="outline" 
-          size="sm" 
+          variant="outline"
+          size="sm"
           className="gap-2"
         >
           <Download className="h-4 w-4" />
@@ -48,9 +48,18 @@ export function WalletHeader() {
           Set Budget
         </Button>
       </div>
-      <AddTransactionDialog open={isTransactionDialogOpen} setOpen={setIsTransactionDialogOpen} />
-      <GenerateReportDialog open={isReportDialogOpen} setOpen={setIsReportDialogOpen} />
-      <SetBudgetDialog open={isBudgetDialogOpen} setOpen={setIsBudgetDialogOpen} />
+      <AddTransactionDialog
+        open={isTransactionDialogOpen}
+        setOpen={setIsTransactionDialogOpen}
+      />
+      <GenerateReportDialog
+        open={isReportDialogOpen}
+        setOpen={setIsReportDialogOpen}
+      />
+      <SetBudgetDialog
+        open={isBudgetDialogOpen}
+        setOpen={setIsBudgetDialogOpen}
+      />
     </div>
   );
 }

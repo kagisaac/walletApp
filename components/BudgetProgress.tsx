@@ -13,7 +13,9 @@ export function BudgetProgress() {
     return (
       <Card className="p-6">
         <h3 className="font-semibold text-lg mb-4">Budget Overview</h3>
-        <p className="text-muted-foreground">No budgets set. Click "Set Budget" to get started.</p>
+        <p className="text-muted-foreground">
+          No budgets set. Click "Set Budget" to get started.
+        </p>
       </Card>
     );
   }
@@ -31,27 +33,35 @@ export function BudgetProgress() {
               <div>
                 <div className="flex justify-between mb-2">
                   <span className="text-sm text-muted-foreground">
-                    {budget.period.charAt(0).toUpperCase() + budget.period.slice(1)} Budget
-                    {budget.category ? ` (${budget.category})` : ''}
+                    {budget.period.charAt(0).toUpperCase() +
+                      budget.period.slice(1)}{" "}
+                    Budget
+                    {budget.category ? ` (${budget.category})` : ""}
                   </span>
-                  <span className="text-sm font-medium">${budget.amount.toLocaleString()}</span>
+                  <span className="text-sm font-medium">
+                    ${budget.amount.toLocaleString()}
+                  </span>
                 </div>
                 <Progress value={progress} className="h-2" />
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">Spent</span>
-                <span className="font-medium">${budget.spent.toLocaleString()}</span>
+                <span className="font-medium">
+                  ${budget.spent.toLocaleString()}
+                </span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">Remaining</span>
-                <span className="font-medium">${(budget.amount - budget.spent).toLocaleString()}</span>
+                <span className="font-medium">
+                  ${(budget.amount - budget.spent).toLocaleString()}
+                </span>
               </div>
               {isExceeding && (
                 <Alert variant="destructive">
                   <AlertCircle className="h-4 w-4" />
                   <AlertDescription>
                     You have exceeded your {budget.period} budget
-                    {budget.category ? ` for ${budget.category}` : ''}!
+                    {budget.category ? ` for ${budget.category}` : ""}!
                   </AlertDescription>
                 </Alert>
               )}

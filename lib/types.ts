@@ -1,6 +1,6 @@
 export interface Transaction {
   id: string;
-  type: 'income' | 'expense';
+  type: "income" | "expense";
   amount: number;
   category: string;
   subcategory: string;
@@ -12,7 +12,7 @@ export interface Transaction {
 export interface Budget {
   id: string;
   amount: number;
-  period: 'weekly' | 'monthly' | 'yearly';
+  period: "weekly" | "monthly" | "yearly";
   category?: string;
   spent: number;
 }
@@ -26,5 +26,5 @@ export interface Account {
   id: string;
   name: string;
   balance: number;
-  type: 'bank' | 'mobile' | 'cash';
+  type: "bank" | "mobile" | "cash";
 }

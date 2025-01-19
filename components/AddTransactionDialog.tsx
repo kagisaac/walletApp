@@ -1,11 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useWallet } from "@/lib/wallet-context";
 
 interface AddTransactionDialogProps {
@@ -13,7 +24,10 @@ interface AddTransactionDialogProps {
   setOpen: (open: boolean) => void;
 }
 
-export function AddTransactionDialog({ open, setOpen }: AddTransactionDialogProps) {
+export function AddTransactionDialog({
+  open,
+  setOpen,
+}: AddTransactionDialogProps) {
   const { addTransaction, categories } = useWallet();
   const [type, setType] = useState<"income" | "expense">("expense");
   const [category, setCategory] = useState<string>("");
@@ -31,9 +45,9 @@ export function AddTransactionDialog({ open, setOpen }: AddTransactionDialogProp
       category,
       subcategory,
       account,
-      note
+      note,
     });
-    
+
     // Reset form
     setType("expense");
     setCategory("");
@@ -53,7 +67,10 @@ export function AddTransactionDialog({ open, setOpen }: AddTransactionDialogProp
         <div className="grid gap-4 py-4">
           <div className="grid gap-2">
             <Label htmlFor="type">Transaction Type</Label>
-            <Select value={type} onValueChange={(value: "income" | "expense") => setType(value)}>
+            <Select
+              value={type}
+              onValueChange={(value: "income" | "expense") => setType(value)}
+            >
               <SelectTrigger>
                 <SelectValue placeholder="Select type" />
               </SelectTrigger>
@@ -65,10 +82,10 @@ export function AddTransactionDialog({ open, setOpen }: AddTransactionDialogProp
           </div>
           <div className="grid gap-2">
             <Label htmlFor="amount">Amount</Label>
-            <Input 
-              id="amount" 
-              type="number" 
-              placeholder="Enter amount" 
+            <Input
+              id="amount"
+              type="number"
+              placeholder="Enter amount"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
             />
@@ -120,9 +137,9 @@ export function AddTransactionDialog({ open, setOpen }: AddTransactionDialogProp
           </div>
           <div className="grid gap-2">
             <Label htmlFor="note">Note</Label>
-            <Input 
-              id="note" 
-              placeholder="Add a note" 
+            <Input
+              id="note"
+              placeholder="Add a note"
               value={note}
               onChange={(e) => setNote(e.target.value)}
             />

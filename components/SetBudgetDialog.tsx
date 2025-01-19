@@ -1,10 +1,21 @@
 "use client";
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useState } from "react";
 import { useWallet } from "@/lib/wallet-context";
 
@@ -16,7 +27,9 @@ interface SetBudgetDialogProps {
 export function SetBudgetDialog({ open, setOpen }: SetBudgetDialogProps) {
   const { setBudget, categories } = useWallet();
   const [amount, setAmount] = useState<string>("");
-  const [period, setPeriod] = useState<"weekly" | "monthly" | "yearly">("monthly");
+  const [period, setPeriod] = useState<"weekly" | "monthly" | "yearly">(
+    "monthly",
+  );
   const [category, setCategory] = useState<string>("");
 
   const handleSetBudget = () => {
@@ -52,7 +65,12 @@ export function SetBudgetDialog({ open, setOpen }: SetBudgetDialogProps) {
           </div>
           <div className="grid gap-2">
             <Label>Period</Label>
-            <Select value={period} onValueChange={(value: "weekly" | "monthly" | "yearly") => setPeriod(value)}>
+            <Select
+              value={period}
+              onValueChange={(value: "weekly" | "monthly" | "yearly") =>
+                setPeriod(value)
+              }
+            >
               <SelectTrigger>
                 <SelectValue placeholder="Select period" />
               </SelectTrigger>
@@ -70,7 +88,7 @@ export function SetBudgetDialog({ open, setOpen }: SetBudgetDialogProps) {
                 <SelectValue placeholder="Select category" />
               </SelectTrigger>
               <SelectContent>
-                {Object.keys(categories).map(cat => (
+                {Object.keys(categories).map((cat) => (
                   <SelectItem key={cat} value={cat}>
                     {cat.charAt(0).toUpperCase() + cat.slice(1)}
                   </SelectItem>

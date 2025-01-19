@@ -12,7 +12,7 @@ export default function Home() {
     <main className="min-h-screen bg-background p-8">
       <div className="mx-auto max-w-7xl space-y-8">
         <WalletHeader />
-        
+
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <AccountsOverview />
           <BudgetProgress />

@@ -6,25 +6,25 @@ import { Ban as Bank, Wallet, CreditCard } from "lucide-react";
 const accounts = [
   {
     name: "Bank Account",
-    balance: 5240.50,
+    balance: 5240.5,
     icon: Bank,
     change: "+2.5%",
-    positive: true
+    positive: true,
   },
   {
     name: "Mobile Money",
     balance: 850.75,
     icon: CreditCard,
     change: "+1.2%",
-    positive: true
+    positive: true,
   },
   {
     name: "Cash",
-    balance: 320.00,
+    balance: 320.0,
     icon: Wallet,
     change: "-0.8%",
-    positive: false
-  }
+    positive: false,
+  },
 ];
 
 export function AccountsOverview() {
@@ -48,7 +48,9 @@ export function AccountsOverview() {
                 </p>
               </div>
             </div>
-            <span className={`text-sm ${account.positive ? "text-green-600" : "text-red-600"}`}>
+            <span
+              className={`text-sm ${account.positive ? "text-green-600" : "text-red-600"}`}
+            >
               {account.change}
             </span>
           </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from "react";
 
 interface Toast {
   id: number;
@@ -17,7 +17,13 @@ const ToastContext = createContext<ToastContextType | undefined>(undefined);
 export function ToastProvider({ children }: { children: React.ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([]);
 
-  const addToast = ({ title, description }: { title: string; description: string }) => {
+  const addToast = ({
+    title,
+    description,
+  }: {
+    title: string;
+    description: string;
+  }) => {
     const id = Date.now();
     setToasts((prev) => [...prev, { id, title, description }]);
     setTimeout(() => {
@@ -46,7 +52,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
 export function useToast() {
   const context = useContext(ToastContext);
   if (context === undefined) {
-    throw new Error('useToast must be used within a ToastProvider');
+    throw new Error("useToast must be used within a ToastProvider");
   }
   return context;
 }

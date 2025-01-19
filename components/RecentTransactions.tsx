@@ -7,26 +7,26 @@ const transactions = [
   {
     id: 1,
     name: "Grocery Shopping",
-    amount: -120.50,
+    amount: -120.5,
     category: "Shopping",
     date: "2024-03-20",
-    icon: ShoppingBag
+    icon: ShoppingBag,
   },
   {
     id: 2,
     name: "Coffee Shop",
-    amount: -4.50,
+    amount: -4.5,
     category: "Food & Drinks",
     date: "2024-03-19",
-    icon: Coffee
+    icon: Coffee,
   },
   {
     id: 3,
     name: "Rent Payment",
-    amount: -1200.00,
+    amount: -1200.0,
     category: "Housing",
     date: "2024-03-18",
-    icon: Home
+    icon: Home,
   },
   {
     id: 4,
@@ -34,8 +34,8 @@ const transactions = [
     amount: -89.99,
     category: "Transport",
     date: "2024-03-17",
-    icon: Car
-  }
+    icon: Car,
+  },
 ];
 
 export function RecentTransactions() {
@@ -54,14 +54,20 @@ export function RecentTransactions() {
               </div>
               <div>
                 <p className="font-medium">{transaction.name}</p>
-                <p className="text-sm text-muted-foreground">{transaction.category}</p>
+                <p className="text-sm text-muted-foreground">
+                  {transaction.category}
+                </p>
               </div>
             </div>
             <div className="text-right">
-              <p className={`font-medium ${transaction.amount < 0 ? "text-red-600" : "text-green-600"}`}>
+              <p
+                className={`font-medium ${transaction.amount < 0 ? "text-red-600" : "text-green-600"}`}
+              >
                 ${Math.abs(transaction.amount).toLocaleString()}
               </p>
-              <p className="text-sm text-muted-foreground">{transaction.date}</p>
+              <p className="text-sm text-muted-foreground">
+                {transaction.date}
+              </p>
             </div>
           </div>
         ))}

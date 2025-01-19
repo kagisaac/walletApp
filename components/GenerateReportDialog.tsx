@@ -1,9 +1,20 @@
 "use client";
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { DatePicker } from "@/components/ui/date-picker";
 import { useState } from "react";
 
@@ -12,7 +23,10 @@ interface GenerateReportDialogProps {
   setOpen: (open: boolean) => void;
 }
 
-export function GenerateReportDialog({ open, setOpen }: GenerateReportDialogProps) {
+export function GenerateReportDialog({
+  open,
+  setOpen,
+}: GenerateReportDialogProps) {
   const [startDate, setStartDate] = useState<Date>();
   const [endDate, setEndDate] = useState<Date>();
   const [reportType, setReportType] = useState<string>("");
